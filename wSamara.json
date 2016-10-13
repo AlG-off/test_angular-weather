@@ -1,0 +1,47 @@
+[
+  {
+    "nameCity": "Samara",
+    "date": "Thu Oct 13 2016 00:00:00 GMT+0400 (RTZ 3 (зима))",
+    "precipitation": "sunny",
+    "tNight": "3",
+    "tDay": "7",
+    "id": 0
+  },
+  {
+    "nameCity": "Samara",
+    "date": "Fri Oct 14 2016 00:00:00 GMT+0400 (RTZ 3 (зима))",
+    "precipitation": "cloudy",
+    "tNight": "3",
+    "tDay": "7",
+    "id": 1
+  },    {
+    "nameCity": "Samara",
+    "date": "Sat Oct 15 2016 00:00:00 GMT+0400 (RTZ 3 (зима))",
+    "precipitation": "sunny",
+    "tNight": "3",
+    "tDay": "7",
+    "id": 2
+  },    {
+    "nameCity": "Samara",
+    "date": "sunny Oct 16 2016 00:00:00 GMT+0400 (RTZ 3 (зима))",
+    "precipitation": "rainy",
+    "tNight": "2",
+    "tDay": "4",
+    "id": 3
+  },    {
+    "nameCity": "Samara",
+    "date": "Mon Oct 17 2016 00:00:00 GMT+0400 (RTZ 3 (зима))",
+    "precipitation": "snowy",
+    "tNight": "-3",
+    "tDay": "2",
+    "id": 4
+  },
+  {
+    "nameCity": "Samara",
+    "date": "Thu Oct 13 2016 00:00:00 GMT+0400 (RTZ 3 (зима))",
+    "precipitation": "cloudy",
+    "tNight": "1",
+    "tDay": "5",
+    "id": 5
+  }
+]

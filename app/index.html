@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <title>Weather</title>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style/css/angular-material.min.css">
+    <link rel="stylesheet" href="style/css/icon.css">
+    <link rel="stylesheet" href="style/style.css">
+
+
+    <script src="../lib/angular.min.js"></script>
+    <script src="../lib/angular-animate.min.js"></script>
+    <script src="../lib/angular-aria.min.js"></script>
+    <script src="../lib/angular-messages.min.js"></script>
+    <script src="../lib/angular-ui-router.js"></script>
+    <script src="../lib/angular-material.min.js"></script>
+
+</head>
+<body ng-controller="MainCtrl">
+
+<md-toolbar class="md-primary">
+    <div class="md-toolbar-tools" tabindex="0">
+        <md-button class="md-icon-button" ng-click="openLeftMenu()" aria-label="Toggle Menu">
+            <md-tooltip >
+                Меню
+            </md-tooltip>
+            <md-icon md-font-set="icon-dehaze"></md-icon>
+        </md-button>
+        Погода
+    </div>
+</md-toolbar>
+
+<div class="container" ui-view="content"></div>
+
+<md-sidenav md-component-id="left" class="md-sidenav-left">
+    <md-toolbar class="md-primary">
+        <div class="md-toolbar-tools" ng-controller="SidenavCtrl" ng-click="closeLeftMenu()">
+            <h1 class="md-toolbar-tools">Меню</h1>
+        </div>
+    </md-toolbar>
+    <md-content>
+        <md-input-container class="md-block" >
+            <label>Город</label>
+            <md-select ng-model="listCities">
+                <md-option value="ghjjh">
+                    dsdsd
+                </md-option>
+            </md-select>
+        </md-input-container>
+    </md-content>
+</md-sidenav>
+
+<script src="app.js"></script>
+<script src="services/rest.service.js"></script>
+<script src="services/data.service.js"></script>
+
+<script src="vw-edit/edit.js"></script>
+<script src="vw-list/list.js"></script>
+<script src="vw-home/home.js"></script>
+
+
+
+</body>
+</html>

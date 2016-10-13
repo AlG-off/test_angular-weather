@@ -1,0 +1,46 @@
+{
+  "cities": [
+    {
+      "name": "Samara",
+      "id": 0
+    },
+    {
+      "name": "Moscow",
+      "id": 1
+    },
+    {
+      "name": "Kazan",
+      "id": 2
+    },
+    {
+      "name": "Yakutsk",
+      "id": 3
+    },
+    {
+      "name": "Adler",
+      "id": 4
+    }
+  ],
+  "precipitation": [
+    {
+      "id": 0,
+      "description": "sunny"
+    },
+    {
+      "id": 1,
+      "description": "cloudy"
+    },
+    {
+      "id": 2,
+      "description": "cloud"
+    },
+    {
+      "id": 3,
+      "description": "rainy"
+    },
+    {
+      "id": 4,
+      "description": "snowy"
+    }
+  ]
+}
