@@ -1,0 +1,33 @@
+<md-sidenav md-component-id="left" class="md-sidenav-left">
+    <md-toolbar class="md-primary">
+        <div class="md-toolbar-tools" ng-click="closeLeftMenu()">
+            <h1 class="md-toolbar-tools">Меню</h1>
+        </div>
+    </md-toolbar>
+    <md-content>
+        <md-input-container class="md-block">
+            <label>Город</label>
+            <md-select ng-model="selectCity">
+                <md-option ng-repeat="city in listCities | orderBy: 'name' track by city.id" value="{{city.name}}">
+                    {{city.name}}
+                </md-option>
+            </md-select>
+        </md-input-container>
+        <div class="md-block">
+            <label>Вид оторбражения</label>
+            <md-button class="md-raised md-primary" ng-click="">
+                <md-tooltip>Плитка</md-tooltip>
+                <md-icon md-font-set="icon-view_comfy"></md-icon>
+            </md-button>
+            <md-button class="md-raised md-primary" ng-click="">
+                <md-tooltip>Таблица</md-tooltip>
+                <md-icon md-font-set="icon-list"></md-icon>
+            </md-button>
+        </div>
+        <div class="md-block" >
+            <a class="" ui-sref="list" ng-click="">
+                <span>Добавить/Редактировать</span>
+            </a>
+        </div>
+    </md-content>
+</md-sidenav>

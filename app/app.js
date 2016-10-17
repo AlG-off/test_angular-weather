@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('app', ['ui.router', 'ngMaterial'])
+var app = angular.module('app', ['ui.router', 'ngMaterial', 'ngMessages'])
     .config(['$stateProvider', '$urlRouterProvider',
         function($stateProvider, $urlRouterProvider) {
 
@@ -37,7 +37,7 @@ var app = angular.module('app', ['ui.router', 'ngMaterial'])
                })
                .state('edit', {
                     parent: 'list',
-                    url: '/edit',
+                    url: '/edit/:id',
                     views: {
                         'content@': {
                             templateUrl: 'vw-edit/edit.html',
@@ -54,10 +54,4 @@ var app = angular.module('app', ['ui.router', 'ngMaterial'])
             };
         }
     ])
-    .controller('SidenavCtrl', ['$scope', '$mdSidenav',
-        function($scope, $mdSidenav) {
-            $scope.closeLeftMenu = function() {
-                $mdSidenav('left').toggle();
-            };
-        }
-    ])
+

@@ -1,1 +1,47 @@
-<div>edit</div>
+<md-content layout-padding>
+    <form name="inputForm">
+        <md-input-container>
+            <label>Город</label>
+            <md-select required ng-model="selectCity.nameCity">
+                <md-option ng-repeat="city in cities" value={{city.name}}>{{city.name}}</md-option>
+            </md-select>
+        </md-input-container>
+
+        <md-input-container>
+            <label>Дата</label>
+            <md-datepicker required ng-model="selectCity.date"></md-datepicker>
+        </md-input-container>
+
+        <md-input-container class="md-block">
+            <label>Осадки</label>
+            <md-select required ng-model="selectCity.precipitation">
+                <md-option ng-repeat="item in precipitation" value={{item.description}}>{{item.description}}</md-option>
+            </md-select>
+        </md-input-container>
+
+        <div layout="row">
+            <p>Температура</p>
+            <md-input-container flex="50">
+                <label>Днем</label>
+                <input required type="text" name="tDay" ng-model="selectCity.tDay" min="-90" max="58" ng-pattern="/^-?\d{1,2}$/" />
+                <div ng-messages="inputForm.tDay.$error">
+                    <div ng-message="required">Поле обязательное для заполнения</div>
+                    <div ng-message="pattern">Поле может содержать только числа от минус 90 до +58</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container flex="50">
+                <label>Ночь</label>
+                <input required type="text" name="tNight" ng-model="selectCity.tNight" min="-90" max="58" ng-pattern="/^-?\d{1,2}$/" />
+                <div ng-messages="inputForm.tNight.$error">
+                    <div ng-message="required">Поле обязательное для заполнения</div>
+                    <div ng-message="pattern">Поле может содержать только числа от минус 90 до +58</div>
+                </div>
+            </md-input-container>
+        </div>
+        <div>
+            <md-button ng-disabled="inputForm.$invalid" class="" ng-click="">Ок</md-button>
+            <md-button class="" ng-click="cancel()">Отмена</md-button>
+        </div>
+    </form>
+</md-content>

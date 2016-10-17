@@ -22,40 +22,27 @@
 <body ng-controller="MainCtrl">
 
 <md-toolbar class="md-primary">
-    <div class="md-toolbar-tools" tabindex="0">
+    <div class="md-toolbar-tools">
         <md-button class="md-icon-button" ng-click="openLeftMenu()" aria-label="Toggle Menu">
             <md-tooltip >
                 Меню
             </md-tooltip>
             <md-icon md-font-set="icon-dehaze"></md-icon>
         </md-button>
-        Погода
+        <a ui-sref="home">Погода</a>
     </div>
 </md-toolbar>
 
 <div class="container" ui-view="content"></div>
 
-<md-sidenav md-component-id="left" class="md-sidenav-left">
-    <md-toolbar class="md-primary">
-        <div class="md-toolbar-tools" ng-controller="SidenavCtrl" ng-click="closeLeftMenu()">
-            <h1 class="md-toolbar-tools">Меню</h1>
-        </div>
-    </md-toolbar>
-    <md-content>
-        <md-input-container class="md-block" >
-            <label>Город</label>
-            <md-select ng-model="listCities">
-                <md-option value="ghjjh">
-                    dsdsd
-                </md-option>
-            </md-select>
-        </md-input-container>
-    </md-content>
-</md-sidenav>
+<sidebar-left></sidebar-left>
 
 <script src="app.js"></script>
 <script src="services/rest.service.js"></script>
 <script src="services/data.service.js"></script>
+
+<script src="components/day.directive.js"></script>
+<script src="components/sidebarLeft.directive.js"></script>
 
 <script src="vw-edit/edit.js"></script>
 <script src="vw-list/list.js"></script>

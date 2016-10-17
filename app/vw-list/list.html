@@ -1,1 +1,73 @@
-<div>list</div>
+<div class="section">
+    <div class="section__list">
+        <table class="list">
+            <thead>
+            <tr class="list__head-row">
+                <th class="list__col-1 list__col-1--center">
+                    <input type="checkbox"
+                           ng-model="allChecked"
+                           ng-change="chooseAllWeathers()"
+                    >
+                </th>
+                <th class="list__col-2">Город</th>
+                <th class="list__col-3" ng-click="sortList.sort('date')">Дата
+                    <i ng-class="{'icon-arrow_drop_up' : sortList.isSortUp('date'),
+                                  'icon-arrow_drop_down' : sortList.isSortDown('date')}">
+
+                    </i>
+                </th>
+                <th class="list__col-4" ng-click="sortList.sort('precipitation')">Осадки
+                    <i ng-class="{'icon-arrow_drop_up' : sortList.isSortUp('precipitation'),
+                                  'icon-arrow_drop_down' : sortList.isSortDown('precipitation')}">
+
+                    </i>
+                </th>
+                <th class="list__col-5" ng-click="sortList.sort('tDay')">Днем
+                    <i ng-class="{'icon-arrow_drop_up' : sortList.isSortUp('tDay'),
+                                  'icon-arrow_drop_down' : sortList.isSortDown('tDay')}">
+
+                    </i>
+                </th>
+                <th class="list__col-6" ng-click="sortList.sort('tNight')">Ночью
+                    <i ng-class="{'icon-arrow_drop_up' : sortList.isSortUp('tNight'),
+                                  'icon-arrow_drop_down' : sortList.isSortDown('tNight')}">
+
+                    </i>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="list__row"
+                ng-class="{'list__row--disable': weather.isArchived}"
+                ng-repeat="weather in weatherList | orderBy:sortList.fieldName:sortList.reverse track by weather.id"
+            >
+                <td class="list__col-1--center">
+                    <input type="checkbox"
+                           ng-model="weather.isChecked"
+                           ng-change="activateBtnDelete()"
+                    >
+                </td>
+                <td ng-bind="weather.nameCity"></td>
+                <td ng-bind="weather.date | date:'yyyy-MM-dd'"></td>
+                <td ng-bind="weather.precipitation"></td>
+                <td ng-bind="weather.tDay"></td>
+                <td ng-bind="weather.tNight"></td>
+                <td>
+                    <button class="list__btn"
+                            ng-click="editWeather(weather)"
+                    >Edit
+                    </button>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="float-btn">
+        <md-button class="md-fab md-primary" ui-sref="add" aria-label="Добавить">
+            <md-tooltip >
+                Добавить
+            </md-tooltip>
+            <md-icon icon="img/icons/ic_add_24px.svg" style="width: 24px; height: 24px;"></md-icon>
+        </md-button>
+    </div>
+</div>

@@ -2,10 +2,9 @@ app.directive("day", function ()
 {
     return {
         restrict: 'E',
-        templateUrl: "day.directive.html",
-        replace: true,
+        templateUrl: "components/day.directive.html",
         scope: {
-            dataWeather: '='
+            weather: '='
         }
     }
 });
