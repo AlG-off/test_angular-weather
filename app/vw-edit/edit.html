@@ -1,12 +1,6 @@
 <md-content layout-padding>
+    <div ng-bind="selectCity.nameCity"></div>
     <form name="inputForm">
-        <md-input-container>
-            <label>Город</label>
-            <md-select required ng-model="selectCity.nameCity">
-                <md-option ng-repeat="city in cities" value={{city.name}}>{{city.name}}</md-option>
-            </md-select>
-        </md-input-container>
-
         <md-input-container>
             <label>Дата</label>
             <md-datepicker required ng-model="selectCity.date"></md-datepicker>

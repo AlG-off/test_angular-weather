@@ -1,14 +1,14 @@
 <md-sidenav md-component-id="left" class="md-sidenav-left">
     <md-toolbar class="md-primary">
-        <div class="md-toolbar-tools" ng-click="closeLeftMenu()">
+        <div class="md-toolbar-tools" ng-click="closeSidebar()">
             <h1 class="md-toolbar-tools">Меню</h1>
         </div>
     </md-toolbar>
     <md-content>
         <md-input-container class="md-block">
             <label>Город</label>
-            <md-select ng-model="selectCity">
-                <md-option ng-repeat="city in listCities | orderBy: 'name' track by city.id" value="{{city.name}}">
+            <md-select ng-model="geolocation">
+                <md-option ng-repeat="city in citiesList | orderBy: 'name' track by city.id" ng-click="setGeolocation(city.name)" value="{{city.name}}">
                     {{city.name}}
                 </md-option>
             </md-select>
@@ -25,7 +25,7 @@
             </md-button>
         </div>
         <div class="md-block" >
-            <a class="" ui-sref="list" ng-click="">
+            <a class="" ui-sref="list" ng-click="closeSidebar()">
                 <span>Добавить/Редактировать</span>
             </a>
         </div>

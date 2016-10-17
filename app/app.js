@@ -47,11 +47,12 @@ var app = angular.module('app', ['ui.router', 'ngMaterial', 'ngMessages'])
                });
         }
     ])
-    .controller('MainCtrl', ['$scope', '$mdSidenav',
-        function($scope, $mdSidenav) {
+    .controller('MainCtrl', ['$scope', '$mdSidenav', 'dataservice',
+        function($scope, $mdSidenav, dataservice) {
             $scope.openLeftMenu = function() {
                 $mdSidenav('left').toggle();
             };
+            $scope.geolocation = dataservice.getCitiesList()[0].name;
         }
-    ])
+    ]);
 

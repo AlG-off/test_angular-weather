@@ -1,5 +1,7 @@
 app.controller('HomeCtrl', ['$scope', 'dataservice',
     function($scope, dataservice) {
-        $scope.weatherList = dataservice.getWeatherList();
+        var weatherList = dataservice.getWeatherList();
+        $scope.today = weatherList[0];
+        $scope.otherDays = weatherList.slice(1)
     }
 ]);

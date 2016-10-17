@@ -1,12 +1,31 @@
 <div class="section">
+    <md-toolbar  ng-show="activeToolbar" class="">
+        <h1 class="md-toolbar-tools">
+            <md-button class=""  aria-label="Отмена" ng-click="unselectAllRows()">
+                <md-tooltip>
+                    Отмена
+                </md-tooltip>
+                <md-icon icon="img/icons/ic_close_24px.svg">
+                </md-icon>
+            </md-button>
+            <div flex> </div>
+            <md-button ng-click="delAllRowWeather()"  class="" aria-label="Удалить">
+                <md-tooltip>
+                    Удалить
+                </md-tooltip>
+                <md-icon icon="img/icons/ic_done_all_24px.svg">
+                </md-icon>
+            </md-button>
+        </h1>
+    </md-toolbar>
     <div class="section__list">
         <table class="list">
             <thead>
             <tr class="list__head-row">
                 <th class="list__col-1 list__col-1--center">
                     <input type="checkbox"
-                           ng-model="allChecked"
-                           ng-change="chooseAllWeathers()"
+                           ng-model="allRowsChecked"
+                           ng-change="toggleSelectAllRows()"
                     >
                 </th>
                 <th class="list__col-2">Город</th>
@@ -44,7 +63,7 @@
                 <td class="list__col-1--center">
                     <input type="checkbox"
                            ng-model="weather.isChecked"
-                           ng-change="activateBtnDelete()"
+                           ng-change="toggleToolbar()"
                     >
                 </td>
                 <td ng-bind="weather.nameCity"></td>
@@ -54,7 +73,8 @@
                 <td ng-bind="weather.tNight"></td>
                 <td>
                     <button class="list__btn"
-                            ng-click="editWeather(weather)"
+                            ng-click="editRowWeather(weather)"
+                            ng-hide="hideBtnEdit"
                     >Edit
                     </button>
                 </td>

@@ -2,7 +2,7 @@ app.factory('dataservice', ['restService' ,
     function(restService){
         var weatherList = restService.getWeatherList(),
             citiesList = restService.getCitiesList(),
-            PRECIPICATION_LIST = restService.getPrecipitationList(),
+            precipicationList = restService.getPrecipitationList(),
             tempStore = null;
 
 
@@ -11,13 +11,15 @@ app.factory('dataservice', ['restService' ,
             getPrecipitationList : getPrecipitationList,
             getWeatherList : getWeatherList,
             getTempStore : getTempStore,
-            setTempStore : setTempStore
+            setTempStore : setTempStore,
+            setWeather : setWeather,
+            delWeather : delWeather
         };
         function getCitiesList(){
             return citiesList;
         }
         function getPrecipitationList(){
-            return PRECIPICATION_LIST
+            return precipicationList
         }
         function getWeatherList(){
             return weatherList;
@@ -27,5 +29,11 @@ app.factory('dataservice', ['restService' ,
         }
         function setTempStore(data){
             tempStore = data;
+        }
+        function setWeather(data){
+            restService.setWeather(data)
+        }
+        function delWeather(data){
+            restService.setWeather(data)
         }
 }]);

@@ -1,6 +1,6 @@
 app.service("restService", ["$http", "$q", 
     function($http, $q) {
-        this.getCitiesList = function() {
+        this.getCitiesList = function(city) {
 /*           var list;
             $http.get('../data.json')
                 .success(function(data){
@@ -114,6 +114,9 @@ app.service("restService", ["$http", "$q",
             });
             console.log(list);
             return list;
+        };
+        this.setWeather = function(data){
+
         }
     }
 ]);

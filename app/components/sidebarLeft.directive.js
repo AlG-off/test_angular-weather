@@ -3,13 +3,19 @@ app.directive("sidebarLeft", function ()
     return {
         restrict: 'E',
         templateUrl: "components/sidebarLeft.directive.html",
-        scope: {},
+        scope: {
+            geolocation: '='
+        },
         controllerAs: 'SidebarCtrl',
         controller: function($scope, $mdSidenav, dataservice) {
-            $scope.closeLeftMenu = function() {
+            $scope.citiesList = dataservice.getCitiesList();
+            $scope.closeSidebar = function() {
                 $mdSidenav('left').toggle();
             };
-            $scope.listCities = dataservice.getCitiesList();
+            $scope.setGeolocation = function(city) {
+                console.log(city);
+                $scope.closeSidebar();
+            }
         }
     }
 });
